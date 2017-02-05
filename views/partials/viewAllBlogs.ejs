@@ -1,0 +1,16 @@
+<div class="col s12 m12 l12">
+    <div class="container">
+        <% for (let i in blogs) { %>
+            <div class="posts">
+                <a href="/<%= blogs[i].blogTitle %>">
+                    <h3 id=title>
+                        <%= blogs[i].blogTitle %>
+                    </h3>
+                </a>
+                <p>
+                    <%= blogs[i].blogContent %>
+                </p>
+            </div>
+            <% } %>
+    </div>
+</div>

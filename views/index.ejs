@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--METADATA-->
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
+    />
+    <!--STYLESHEET-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <!--  Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+</head>
+
+<body>
+    <!-- Start of header -->
+    <title>Blog - Home</title>
+    <header role="header">
+        <nav role="navigation">
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo">Blog</a>
+                <ul class="right hide-on-med-and-down main-nav">
+                    <li><a href="/admin">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- End of header -->
+    <main role="main">
+        <div class="col s12">
+        <section role="welcome banner" class="section" id="banner">
+            <div id="welcome">
+                <h1>Welcome</h1>
+            </div>
+        </section>
+            <div class="container">
+                <h3>Recent Activity</h3>
+                <hr>
+                <% for (let i in blogs) { %>
+                    <div class="posts">
+                        <div class="blog">
+                            <a href="/<%= blogs[i].blogTitle %>"><h2 id=title role="blog title"><%= blogs[i].blogTitle %></h2></a>
+                            <p role="blog content" class="bcontent"><%= blogs[i].blogContent %></p>
+                            <div class="row">
+                                <form class="col s12" method="POST" action="/">
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input name="comment" id="comment" type="text" class="validate">
+                                            <input type="hidden" name="title" value="<%= blogs[i].blogTitle %>">
+                                            <label for="blog_Title"> Write a response ...</label>
+                                        </div>
+                                    </div>
+                                    <button class="btn waves-effect waves-light" type="submit" name="action">Add Comment</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                <% } %>
+            </div>
+            </div>
+        </div>
+    </main>
+    <footer role="footer">
+    </footer>
+    <!-- Import my personal stylesheet -->
+    <script src="js/deleteBlog.js"></script>
+</body>
+
+</html>

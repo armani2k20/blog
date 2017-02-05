@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--METADATA-->
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"
+    />
+    <!--STYLESHEET-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <!--  Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/materialize.min.js"></script>
+</head>
+
+<body class="fullBlog">
+    <title>
+        <%= blog.blogTitle %>
+    </title>
+    <header role="header">
+        <nav role="navigation">
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo">Blog</a>
+                <ul class="right hide-on-med-and-down main-nav">
+                    <li><a href="/admin">Admin</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="fullBlogSection">
+            <div class="fullBlogPosts">
+                <h3>
+                    <%= blog.blogTitle %>
+                </h3>
+                <p class="fullBlogContent">
+                    <%= blog.blogContent %>
+                </p>
+        </section>
+        <section class="fullBlogCommentsSection">
+            <div class="fullBlogComments">
+                <h4>Comments</h4>
+                <% for (let i in blog.comments) { %>
+                    <p>
+                        <%= blog.comments[i].comment %>
+                    </p>
+                    <% } %>
+            </div>
+            </div>
+        </section>
+    </main>
+    <!--Import jQuery then materialize.js-->
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <!-- Import CSS animation script -->
+    <script src="js/css3-animate-it.js"></script>
+    <!-- Import Font Awesome script -->
+    <script src="https://use.fontawesome.com/add6c7c4be.js"></script>
+    <!-- Import my personal stylesheet -->
+    <script src="js/deleteBlog.js"></script>
+    <script src="js/style.js"></script>
+</body>
+
+</html>
